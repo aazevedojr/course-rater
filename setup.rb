@@ -2,8 +2,8 @@
 
 require 'sqlite3'
 
-db = SQLite3::Database.new("challenge.db")
-db.results_as_hash = true
+@db = SQLite3::Database.new("challenge.db")
+@db.results_as_hash = true
 
 create_makers_table = <<-SQL
   CREATE TABLE IF NOT EXISTS makers(
@@ -31,6 +31,6 @@ create_reviews_table = <<-SQL
   )
 SQL
 
-db.execute(create_makers_table)
-db.execute(create_courses_table)
-db.execute(create_reviews_table)
+@db.execute(create_makers_table)
+@db.execute(create_courses_table)
+@db.execute(create_reviews_table)
