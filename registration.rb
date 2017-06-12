@@ -11,11 +11,6 @@ def to_url(code)
   "https://supermariomakerbookmark.nintendo.net/courses/" + code
 end
 
-
-def register(course_code)
-  # retrieves data using nokogiri
-end
-
 def new_maker(creator_name)
   @db.execute("INSERT INTO makers (name)
     VALUES (?)", [creator_name])
