@@ -25,7 +25,6 @@ end
 
 # User interface
 
-
 puts "Enter the 19 digit code that is your course ID (e.g. '2D91-0000-02D6-F1E9')."
 
 input = gets.chomp

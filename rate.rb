@@ -9,13 +9,17 @@ enjoyed = []
 
 # USER INTERFACE
 
+# For testing purposes, the we'll use a binary rating now.
+# In the future, the rating will vary from 1 to 5 ("stars").
+
 courses = @db.execute("SELECT * FROM courses")
 courses.each do |course|
-puts "Did you enjoy playing #{course['name']}? Y/N"
-enjoyed << gets.chomp
+  puts "Did you enjoy playing #{course['name']}? Y/N"
+  enjoyed << gets.chomp
 end
 
 enjoyed.each do |rate|
   @db.execute("INSERT INTO reviews (stars) VALUES (?)",
-  [if (rate == 'Y' || rate == 'y') then 1 else 0 end])
+  [if (rate == 'Y' || rate == 'y') then 1 else 0 end]
+  )
 end
