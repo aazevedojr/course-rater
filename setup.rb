@@ -25,7 +25,8 @@ create_courses_table = <<-SQL
   CREATE TABLE IF NOT EXISTS courses(
     id VARCHAR(19) PRIMARY KEY,
     title VARCHAR(22),
-    maker_id INT REFERENCES makers(id)
+    maker_id INT REFERENCES makers(id),
+    challenge_id INT REFERENCES challenges(id)
   )
 SQL
 
@@ -42,7 +43,8 @@ create_reviews_table = <<-SQL
     rating INT,
     feedback VARCHAR(1200),
     maker_id VARCHAR(16) REFERENCES makers(id),
-    course_id VARCHAR(19) REFERENCES courses(id)
+    course_id VARCHAR(19) REFERENCES courses(id),
+    challenge_id INT REFERENCES challenges(id)
   )
 SQL
 
@@ -61,6 +63,8 @@ create_challenges_table = <<-SQL
     maker_id VARCHAR(16) REFERENCES makers(id)
   )
 SQL
+
+# Creating the tables:
 
 @db.execute(create_makers_table)
 @db.execute(create_courses_table)
