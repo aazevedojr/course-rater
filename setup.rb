@@ -19,7 +19,8 @@ SQL
 # Table 'courses':
 #   In-game Course ID (primary key),
 #   Course's title,
-#   ID to the maker of the course (foreign key).
+#   ID to the maker of the course (foreign key),
+#   ID to the challenge that the course was created for.
 
 create_courses_table = <<-SQL
   CREATE TABLE IF NOT EXISTS courses(
@@ -43,8 +44,7 @@ create_reviews_table = <<-SQL
     rating INT,
     feedback VARCHAR(1200),
     maker_id VARCHAR(16) REFERENCES makers(id),
-    course_id VARCHAR(19) REFERENCES courses(id),
-    challenge_id INT REFERENCES challenges(id)
+    course_id VARCHAR(19) REFERENCES courses(id)
   )
 SQL
 
