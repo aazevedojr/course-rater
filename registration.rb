@@ -1,10 +1,10 @@
 # Entering the challenge:
 
-require_relative 'setup'
+require_relative 'new_challenge'
 require 'nokogiri'
 require 'open-uri'
-
 require 'openssl'
+
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 def to_url(code)
