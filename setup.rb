@@ -4,6 +4,7 @@ require 'sqlite3'
 
 @db = SQLite3::Database.new("course_rater.db")
 @db.results_as_hash = true
+@db.execute("pragma encoding='UTF-8';")
 
 # Table 'makers':
 #   Nintendo Network ID (primary key),

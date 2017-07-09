@@ -27,7 +27,7 @@ PIDs = [
 
 def csv2db(filename)
   row_no = 0
-  CSV.foreach(filename, headers: true, header_converters: :symbol) do |row|
+  CSV.foreach(filename, headers: true, header_converters: :symbol, encoding: 'utf-8') do |row|
     col_no = 2
     pid = PIDs[row_no]
     CIDs.each do |cid|
