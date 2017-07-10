@@ -2,6 +2,10 @@ require 'csv'
 require_relative 'registration'
 require_relative 'new_challenge'
 
+THEME = "Super Heroes"
+
+RATINGS_CSV_FILE = "super_heroi.csv"
+
 CIDs = [
   'A808-0000-033C-C953',
   'EA2F-0000-033D-625C',
@@ -22,8 +26,11 @@ PIDs = [
   "adsosabado",
   "Bibibombinha",
   "jogo_jogos",
-  "brayer.souza"
+  "brayer.souza",
+  "Stopinski"
 ]
+
+# "xTorviCx"
 
 def csv2db(filename)
   row_no = 0
@@ -38,14 +45,11 @@ def csv2db(filename)
   end
 end
 
-# "xTorviCx"
-# "Stopinski"
-
-
-challenge_ID = new_challenge('Super Heroes', nil, nil)
-
-CIDs.each do |cid|
-  add_maker_n_course_to_db(cid, challenge_ID)
+def import_challenge
+  challenge_ID = new_challenge(THEME, nil, nil)
+  CIDs.each do |cid|
+    add_maker_n_course_to_db(cid, challenge_ID)
+  end
+  csv2db(RATINGS_CSV_FILE)
+  challenge_ID
 end
-
-csv2db('super_heroi.csv')
