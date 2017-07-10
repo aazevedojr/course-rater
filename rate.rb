@@ -5,7 +5,6 @@
 
 require_relative 'registration'
 
-enjoyed = []
 
 # USER INTERFACE
 

@@ -3,14 +3,13 @@
 require 'sqlite3'
 
 @db = SQLite3::Database.new("course_rater.db")
-@db.results_as_hash = true
 @db.execute("pragma encoding='UTF-8';")
 
 # Table 'makers':
 #   Nintendo Network ID (primary key),
 #   Mii's name.
 
-create_makers_table = <<-SQL
+@create_makers_table = <<-SQL
   CREATE TABLE IF NOT EXISTS makers(
     id VARCHAR(16) PRIMARY KEY,
     name VARCHAR(10)
@@ -23,7 +22,7 @@ SQL
 #   ID to the maker of the course (foreign key),
 #   ID to the challenge that the course was created for.
 
-create_courses_table = <<-SQL
+@create_courses_table = <<-SQL
   CREATE TABLE IF NOT EXISTS courses(
     id VARCHAR(19) PRIMARY KEY,
     title VARCHAR(22),
@@ -39,7 +38,7 @@ SQL
 #   ID to the reviewer, who's also a maker (foreign key),
 #   ID to the course that's being rated (foreign key).
 
-create_reviews_table = <<-SQL
+@create_reviews_table = <<-SQL
   CREATE TABLE IF NOT EXISTS reviews(
     id INTEGER PRIMARY KEY,
     rating INT,
@@ -55,7 +54,7 @@ SQL
 #   Start date,
 #   ID to the maker who chose the theme (foreign key).
 
-create_challenges_table = <<-SQL
+@create_challenges_table = <<-SQL
   CREATE TABLE IF NOT EXISTS challenges(
     id INTEGER PRIMARY KEY,
     theme VARCHAR(22),
@@ -67,7 +66,9 @@ SQL
 
 # Creating the tables:
 
-@db.execute(create_makers_table)
-@db.execute(create_courses_table)
-@db.execute(create_reviews_table)
-@db.execute(create_challenges_table)
+def create_db
+  @db.execute(@create_makers_table)
+  @db.execute(@create_courses_table)
+  @db.execute(@create_reviews_table)
+  @db.execute(@create_challenges_table)
+end
