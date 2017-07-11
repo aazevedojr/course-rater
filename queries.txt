@@ -16,7 +16,7 @@ LEFT JOIN (
 ) AS total_per_rater ON r.maker_id = total_per_rater.maker_id
 WHERE m.id != c.maker_id AND c.challenge_id = 1
 GROUP BY c.id
-ORDER BY final_rating DESC
+ORDER BY final_rating DESC;
 
 
 -- Results with range from 1 to 5
@@ -34,10 +34,41 @@ LEFT JOIN (
 ) AS total_per_rater ON r.maker_id = total_per_rater.maker_id
 WHERE m.id != c.maker_id AND c.challenge_id = 1
 GROUP BY c.id
-ORDER BY final_rating DESC
+ORDER BY final_rating DESC;
 
 
-DELETE FROM makers;
-DELETE FROM courses;
-DELETE FROM reviews;
-DELETE FROM challenges;
+-- Results with range from 0 to 4, multiplied by 100
+
+SELECT c.title, CAST(100 * SUM(CAST(r.rating -1 AS float) / total_per_rater.total_rating) AS int) AS final_rating
+FROM reviews AS r
+LEFT JOIN courses AS c ON r.course_id = c.id
+LEFT JOIN makers AS m ON r.maker_id = m.id
+LEFT JOIN (
+  SELECT r.maker_id AS maker_id, SUM(r.rating - 1) AS total_rating
+  FROM reviews AS r
+  LEFT JOIN courses AS c ON r.course_id = c.id
+  WHERE r.maker_id != c.maker_id AND c.challenge_id = 1
+  GROUP BY r.maker_id
+) AS total_per_rater ON r.maker_id = total_per_rater.maker_id
+WHERE m.id != c.maker_id AND c.challenge_id = 1
+GROUP BY c.id
+ORDER BY final_rating DESC;
+
+
+-- Results as Plain Sum
+
+SELECT c.title, SUM(r.rating) AS final_rating
+FROM reviews AS r
+LEFT JOIN courses AS c ON r.course_id = c.id
+WHERE r.maker_id != c.maker_id AND c.challenge_id = 1
+GROUP BY c.id
+ORDER BY final_rating DESC;
+
+
+-- Feedback
+
+SELECT c.title, m.name, r.rating, r.feedback FROM reviews AS r
+JOIN courses AS c ON c.id = r.course_id
+JOIN makers AS m ON m.id = r.maker_id
+WHERE c.challenge_id = 1 AND r.maker_id != c.maker_id
+ORDER BY c.title, m.name;

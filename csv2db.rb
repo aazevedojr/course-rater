@@ -27,10 +27,9 @@ PIDs = [
   "Bibibombinha",
   "jogo_jogos",
   "brayer.souza",
-  "Stopinski"
+  "Stopinski",
+  "xTorviCx"
 ]
-
-# "xTorviCx"
 
 def csv2db(filename)
   row_no = 0
