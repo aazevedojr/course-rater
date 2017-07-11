@@ -9,7 +9,7 @@ require_relative 'setup'
 create_db
 
 # From csv2db:
-challenge_id = 5 # import_challenge
+challenge_id = import_challenge
 
 # From db2csv:
 save_results(challenge_id)
