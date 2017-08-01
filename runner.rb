@@ -11,5 +11,5 @@ create_db
 # From csv2db:
 challenge_id = import_challenge
 
-# From db2csv:
-save_results(challenge_id)
+# From db2csv (CHANGE second argument name for every challenge):
+save_results(challenge_id, 'adaptation_results.csv')
