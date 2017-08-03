@@ -47,13 +47,13 @@ CIDs = [
 
 
 PIDs = [
-  "Zudomon2",
-  "adsosabado",
-  "Bearpamela",
-  "Marcyiello",
-  "xTorviCx",
   "lukengl",
-  "jogo_jogos"
+  "Marcyiello",
+  "jogo_jogos",
+  "Zudomon2",
+  "Bearpamela",
+  "xTorviCx",
+  "adsosabado"
 ]
 
 def csv2db(filename)
@@ -61,7 +61,9 @@ def csv2db(filename)
   CSV.foreach(filename, headers: true, header_converters: :symbol, encoding: 'utf-8') do |row|
     col_no = 2
     pid = PIDs[row_no]
+    p pid, row[1]
     CIDs.each do |cid|
+      p row[col_no + 1]
       new_rating(row[col_no].to_i, row[col_no + 1], pid, cid)
       col_no += 2
     end
