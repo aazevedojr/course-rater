@@ -31,29 +31,54 @@ require_relative 'new_challenge'
 #   "xTorviCx"
 # ]
 
-THEME = "Adaptation"
+# THEME = "Adaptation"
 
-RATINGS_CSV_FILE = "adaptacao.csv"
+# RATINGS_CSV_FILE = "adaptacao.csv"
+
+# CIDs = [
+#   'C6B5-0000-0344-5C27',
+#   '370A-0000-0345-106A',
+#   '274E-0000-0345-D924',
+#   '5F8F-0000-0346-DDB8',
+#   'EE5C-0000-0347-6885',
+#   'A61E-0000-0349-114E',
+#   'E376-0000-0349-8457'
+# ]
+
+
+# PIDs = [
+#   "lukengl",
+#   "Marcyiello",
+#   "jogo_jogos",
+#   "Zudomon2",
+#   "Bearpamela",
+#   "xTorviCx",
+#   "adsosabado"
+# ]
+
+THEME = 'Music'
+
+RATINGS_CSV_FILE = 'music.csv'
 
 CIDs = [
-  'C6B5-0000-0344-5C27',
-  '370A-0000-0345-106A',
-  '274E-0000-0345-D924',
-  '5F8F-0000-0346-DDB8',
-  'EE5C-0000-0347-6885',
-  'A61E-0000-0349-114E',
-  'E376-0000-0349-8457'
+  'F7CE-0000-034D-EBCF',
+  '68D8-0000-034E-6D04',
+  'A2F8-0000-034F-3B4F',
+  'A145-0000-0351-8282',
+  'E4A0-0000-0353-0244',
+  '736B-0000-0353-73E2',
+  '6D80-0000-0353-D816'
 ]
 
-
+# In oder of response submission!
 PIDs = [
-  "lukengl",
-  "Marcyiello",
-  "jogo_jogos",
-  "Zudomon2",
-  "Bearpamela",
-  "xTorviCx",
-  "adsosabado"
+  'WIIUREOLI79',
+  'Bibibombinha',
+  'gus.azv',
+  'Marcyiello',
+  'brayer.souza',
+  'Zudomon2',
+  'adsosabado'
 ]
 
 def csv2db(filename)
