@@ -15,9 +15,9 @@ GROUP BY c.id
 ORDER BY final_rating DESC
 SQL
 
-def save_results(challenge_id)
+def save_results(challenge_id, output_file)
   results = @db.execute(@results_table, [challenge_id, challenge_id])
-  CSV.open('results.csv', 'w') do |csv|
+  CSV.open(output_file, 'w') do |csv|
     results.each do |result|
       csv << result
     end

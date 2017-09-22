@@ -2,33 +2,83 @@ require 'csv'
 require_relative 'registration'
 require_relative 'new_challenge'
 
-THEME = "Super Heroes"
+# THEME = "Super Heroes"
 
-RATINGS_CSV_FILE = "super_heroi.csv"
+# RATINGS_CSV_FILE = "super_heroi.csv"
+
+# CIDs = [
+#   'A808-0000-033C-C953',
+#   'EA2F-0000-033D-625C',
+#   '6684-0000-033D-AB0F',
+#   'EDB2-0000-033E-52D2',
+#   '4272-0000-033E-668D',
+#   '6B53-0000-033F-0B33',
+#   '96DD-0000-0340-3722',
+#   'D6CE-0000-0340-3F5D',
+#   '59F9-0000-0341-CFC9'
+# ]
+
+
+# PIDs = [
+#   "RZudomon",
+#   "lukengl",
+#   "WIIUREOLI79",
+#   "adsosabado",
+#   "Bibibombinha",
+#   "jogo_jogos",
+#   "brayer.souza",
+#   "Stopinski",
+#   "xTorviCx"
+# ]
+
+# THEME = "Adaptation"
+
+# RATINGS_CSV_FILE = "adaptacao.csv"
+
+# CIDs = [
+#   'C6B5-0000-0344-5C27',
+#   '370A-0000-0345-106A',
+#   '274E-0000-0345-D924',
+#   '5F8F-0000-0346-DDB8',
+#   'EE5C-0000-0347-6885',
+#   'A61E-0000-0349-114E',
+#   'E376-0000-0349-8457'
+# ]
+
+
+# PIDs = [
+#   "lukengl",
+#   "Marcyiello",
+#   "jogo_jogos",
+#   "Zudomon2",
+#   "Bearpamela",
+#   "xTorviCx",
+#   "adsosabado"
+# ]
+
+THEME = 'Music'
+
+RATINGS_CSV_FILE = 'music.csv'
 
 CIDs = [
-  'A808-0000-033C-C953',
-  'EA2F-0000-033D-625C',
-  '6684-0000-033D-AB0F',
-  'EDB2-0000-033E-52D2',
-  '4272-0000-033E-668D',
-  '6B53-0000-033F-0B33',
-  '96DD-0000-0340-3722',
-  'D6CE-0000-0340-3F5D',
-  '59F9-0000-0341-CFC9'
+  'F7CE-0000-034D-EBCF',
+  '68D8-0000-034E-6D04',
+  'A2F8-0000-034F-3B4F',
+  'A145-0000-0351-8282',
+  'E4A0-0000-0353-0244',
+  '736B-0000-0353-73E2',
+  '6D80-0000-0353-D816'
 ]
 
-
+# In oder of response submission!
 PIDs = [
-  "RZudomon",
-  "lukengl",
-  "WIIUREOLI79",
-  "adsosabado",
-  "Bibibombinha",
-  "jogo_jogos",
-  "brayer.souza",
-  "Stopinski",
-  "xTorviCx"
+  'WIIUREOLI79',
+  'Bibibombinha',
+  'gus.azv',
+  'Marcyiello',
+  'brayer.souza',
+  'Zudomon2',
+  'adsosabado'
 ]
 
 def csv2db(filename)
@@ -36,7 +86,9 @@ def csv2db(filename)
   CSV.foreach(filename, headers: true, header_converters: :symbol, encoding: 'utf-8') do |row|
     col_no = 2
     pid = PIDs[row_no]
+    p pid, row[1]
     CIDs.each do |cid|
+      p row[col_no + 1]
       new_rating(row[col_no].to_i, row[col_no + 1], pid, cid)
       col_no += 2
     end
