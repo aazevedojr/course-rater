@@ -12,4 +12,4 @@ create_db
 challenge_id = import_challenge
 
 # From db2csv (CHANGE second argument name for every challenge):
-save_results(challenge_id, 'music_results.csv')
+save_results(challenge_id, 'ghosthouse_results.csv')

@@ -2,7 +2,7 @@
 
 -- Results --
 
-SELECT c.title, creator.name, 25 * SUM(CAST(r.rating -1 AS float) / total_per_rater.total_rating) AS final_rating
+SELECT c.title, creator.name, 30 * SUM(CAST(r.rating -1 AS float) / total_per_rater.total_rating) AS final_rating
 FROM reviews AS r
 LEFT JOIN makers AS creator ON c.maker_id = creator.id
 LEFT JOIN courses AS c ON r.course_id = c.id
@@ -20,7 +20,7 @@ ORDER BY final_rating DESC;
 
 -- Feedback
 
-SELECT c.title, m.name, r.rating, 25 * (CAST(r.rating -1 AS float) / total_per_rater.total_rating)  AS final_rating, r.feedback
+SELECT c.title, m.name, r.rating, 30 * (CAST(r.rating -1 AS float) / total_per_rater.total_rating)  AS final_rating, r.feedback
 FROM reviews AS r
 LEFT JOIN makers AS creator ON c.maker_id = creator.id
 LEFT JOIN courses AS c ON r.course_id = c.id
