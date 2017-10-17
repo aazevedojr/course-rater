@@ -56,29 +56,87 @@ require_relative 'new_challenge'
 #   "adsosabado"
 # ]
 
-THEME = 'Music'
+# THEME = 'Music'
 
-RATINGS_CSV_FILE = 'music.csv'
+# RATINGS_CSV_FILE = 'music.csv'
+
+# CIDs = [
+#   'F7CE-0000-034D-EBCF',
+#   '68D8-0000-034E-6D04',
+#   'A2F8-0000-034F-3B4F',
+#   'A145-0000-0351-8282',
+#   'E4A0-0000-0353-0244',
+#   '736B-0000-0353-73E2',
+#   '6D80-0000-0353-D816'
+# ]
+
+# # In oder of response submission!
+# PIDs = [
+#   'WIIUREOLI79',
+#   'Bibibombinha',
+#   'gus.azv',
+#   'Marcyiello',
+#   'brayer.souza',
+#   'Zudomon2',
+#   'adsosabado'
+# ]
+
+# THEME = 'Careers'
+
+# RATINGS_CSV_FILE = 'careers.csv'
+
+# CIDs = [
+#   '44E2-0000-0358-BB1F',
+#   '8DE0-0000-0357-DF94',
+#   '3818-0000-0357-FE59',
+#   'C676-0000-035A-7659',
+#   '1B3A-0000-035B-044A',
+#   '9B8D-0000-035B-B62C',
+#   '244C-0000-035D-0F1E'
+# ]
+
+# # In oder of response submission!
+# PIDs = [
+#   'Ghost_TF141_MW2',
+#   'Zudomon2',
+#   'Gessualdo',
+#   'Stopinski',
+#   'Marcyiello',
+#   'adsosabado',
+#   'xTorviCx'
+# ]
+
+THEME = 'Ghost House'
+
+RATINGS_CSV_FILE = 'ghosthouse.csv'
 
 CIDs = [
-  'F7CE-0000-034D-EBCF',
-  '68D8-0000-034E-6D04',
-  'A2F8-0000-034F-3B4F',
-  'A145-0000-0351-8282',
-  'E4A0-0000-0353-0244',
-  '736B-0000-0353-73E2',
-  '6D80-0000-0353-D816'
+  '2F41-0000-0361-6D32',
+  '4862-0000-0361-8C64',
+  '8A87-0000-0361-CAA9',
+  '2D7C-0000-0362-2D8A',
+  'D927-0000-0362-39CE',
+  '1C00-0000-0362-499C',
+  '80F1-0000-0362-B02A',
+  '9E8D-0000-0363-6594',
+  'BFFC-0000-0363-D14C',
+  '91CF-0000-0364-52C6',
+  '5A26-0000-0365-367E'
 ]
 
 # In oder of response submission!
 PIDs = [
-  'WIIUREOLI79',
-  'Bibibombinha',
-  'gus.azv',
-  'Marcyiello',
-  'brayer.souza',
-  'Zudomon2',
-  'adsosabado'
+'Bibibombinha',
+'WIIUREOLI79',
+'Stopinski',
+'Marcyiello',
+'adsosabado',
+'xTorviCx',
+'rage_jcs',
+'suller.souza',
+'ricozzy',
+'brayer.souza',
+'gus.azv'
 ]
 
 def csv2db(filename)
