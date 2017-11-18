@@ -106,37 +106,70 @@ require_relative 'new_challenge'
 #   'xTorviCx'
 # ]
 
-THEME = 'Ghost House'
+# THEME = 'Ghost House'
+#
+# RATINGS_CSV_FILE = 'ghosthouse.csv'
+#
+# CIDs = [
+#   '2F41-0000-0361-6D32',
+#   '4862-0000-0361-8C64',
+#   '8A87-0000-0361-CAA9',
+#   '2D7C-0000-0362-2D8A',
+#   'D927-0000-0362-39CE',
+#   '1C00-0000-0362-499C',
+#   '80F1-0000-0362-B02A',
+#   '9E8D-0000-0363-6594',
+#   'BFFC-0000-0363-D14C',
+#   '91CF-0000-0364-52C6',
+#   '5A26-0000-0365-367E'
+# ]
+#
+# # In oder of response submission!
+# PIDs = [
+# 'Bibibombinha',
+# 'WIIUREOLI79',
+# 'Stopinski',
+# 'Marcyiello',
+# 'adsosabado',
+# 'xTorviCx',
+# 'rage_jcs',
+# 'suller.souza',
+# 'ricozzy',
+# 'brayer.souza',
+# 'gus.azv'
+# ]
 
-RATINGS_CSV_FILE = 'ghosthouse.csv'
+THEME = 'Remix SMB3'
+
+RATINGS_CSV_FILE = 'smb3.csv'
 
 CIDs = [
-  '2F41-0000-0361-6D32',
-  '4862-0000-0361-8C64',
-  '8A87-0000-0361-CAA9',
-  '2D7C-0000-0362-2D8A',
-  'D927-0000-0362-39CE',
-  '1C00-0000-0362-499C',
-  '80F1-0000-0362-B02A',
-  '9E8D-0000-0363-6594',
-  'BFFC-0000-0363-D14C',
-  '91CF-0000-0364-52C6',
-  '5A26-0000-0365-367E'
+  '4E0E-0000-0367-F936',
+  'DC4E-0000-0368-6C7F',
+  '37B3-0000-0368-D5A8',
+  'C807-0000-0369-5174',
+  '8965-0000-0369-6135',
+  '39C2-0000-0369-ABCE',
+  'A945-0000-036A-24E8',
+  '38AE-0000-036A-295D',
+  '5E64-0000-036B-5A73',
+  '28C5-0000-036B-B87C',
+  '3D06-0000-036B-E2CE'
 ]
 
 # In oder of response submission!
 PIDs = [
-'Bibibombinha',
-'WIIUREOLI79',
+'Ghost_TF141_MW2',
+'Bearpamela',
 'Stopinski',
+'EmmanoelXD',
 'Marcyiello',
+'ricozzy',
+'JuniorGolden',
+'rage_jcs',
 'adsosabado',
 'xTorviCx',
-'rage_jcs',
-'suller.souza',
-'ricozzy',
-'brayer.souza',
-'gus.azv'
+'brayer.souza'
 ]
 
 def csv2db(filename)
